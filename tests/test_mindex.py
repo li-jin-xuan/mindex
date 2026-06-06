@@ -146,6 +146,16 @@ class MIndexTests(unittest.TestCase):
             self.assertEqual(entries, [])
             self.assertEqual(warnings, [])
 
+    def test_discover_skips_plugin_documents(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            path = base / "plugin" / "skills" / "remember" / "SKILL.md"
+            path.parent.mkdir(parents=True)
+            path.write_text("---\ndescription: Plugin skill\n---\nBody\n", encoding="utf-8")
+            entries, warnings = discover(base)
+            self.assertEqual(entries, [])
+            self.assertEqual(warnings, [])
+
     def test_discover_rejects_sensitive_filenames_case_insensitively(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             base = Path(directory)

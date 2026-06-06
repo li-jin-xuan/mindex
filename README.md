@@ -14,6 +14,23 @@ Claude Code 已提供按仓库工作的 Auto Memory。MIndex 不替代它，而�
 - Auto Memory：Claude 自动积累的仓库经验和使用模式
 - MIndex：用户确认的长期偏好、跨项目事实、项目决策和技术结论
 
+## Claude Code 插件
+
+MIndex 同时提供 Claude Code 插件，包含四个显式技能：
+
+- `/mindex:setup`：安装或重新连接独立的可写记忆目录
+- `/mindex:remember`：保存经过筛选的长期记忆
+- `/mindex:recall`：按主题检索历史记忆
+- `/mindex:doctor`：检查安装、索引、锁和隐私问题
+
+本地测试插件：
+
+```bash
+claude --plugin-dir ./plugin
+```
+
+插件文件与用户数据相互分离。插件更新不会覆盖记忆，用户记忆也不会随插件发布。
+
 ## 核心设计
 
 ```
@@ -75,6 +92,7 @@ updated: YYYY-MM-DD
 
 ```bash
 make check
+claude plugin validate --strict plugin
 ```
 
 Windows PowerShell：

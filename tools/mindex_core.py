@@ -50,6 +50,7 @@ SENSITIVE_NAME_PARTS = {
     "token",
     "tokens",
 }
+SKIP_TOP_LEVEL_DIRS = {"plugin"}
 FRONTMATTER_RE = re.compile(r"\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|\Z)", re.DOTALL)
 
 
@@ -94,6 +95,8 @@ def discover(base: Path) -> tuple[list[Entry], list[str]]:
     for path in sorted(base.rglob("*.md")):
         relative = path.relative_to(base)
         if any(part.startswith(".") for part in relative.parts):
+            continue
+        if relative.parts and relative.parts[0] in SKIP_TOP_LEVEL_DIRS:
             continue
         if path.name.casefold() in SKIP_NAMES:
             continue

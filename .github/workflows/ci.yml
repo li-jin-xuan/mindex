@@ -28,3 +28,6 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Verify generated index
         run: python tools/verify.py
+      - name: Validate plugin manifest
+        if: runner.os == 'Linux' && matrix.python-version == '3.13'
+        run: npx -y @anthropic-ai/claude-code@2.1.158 plugin validate --strict plugin
