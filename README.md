@@ -31,6 +31,15 @@ claude --plugin-dir ./plugin
 
 插件文件与用户数据相互分离。插件更新不会覆盖记忆，用户记忆也不会随插件发布。
 
+从公开 marketplace 安装：
+
+```text
+/plugin marketplace add li-jin-xuan/mindex
+/plugin install mindex@mindex
+```
+
+社区目录审核通过后，也可以从 `@claude-community` 安装。
+
 ## 核心设计
 
 ```
@@ -93,6 +102,7 @@ updated: YYYY-MM-DD
 ```bash
 make check
 claude plugin validate --strict plugin
+claude plugin validate --strict .
 ```
 
 Windows PowerShell：

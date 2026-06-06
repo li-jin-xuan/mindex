@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "mindex",
+  "version": "1.0.0",
+  "description": "Long-term memory workflows for Claude Code",
+  "owner": {
+    "name": "li-jin-xuan"
+  },
+  "plugins": [
+    {
+      "name": "mindex",
+      "description": "Auditable, version-controlled long-term memory workflows for Claude Code",
+      "version": "1.0.0",
+      "author": {
+        "name": "li-jin-xuan"
+      },
+      "source": "./plugin",
+      "category": "productivity",
+      "homepage": "https://github.com/li-jin-xuan/mindex",
+      "tags": [
+        "memory",
+        "knowledge-management",
+        "productivity"
+      ]
+    }
+  ]
+}
