@@ -7,7 +7,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-from mindex_core import discover, memory_lock, render_index, validate
+from mindex_core import configure_utf8_output, discover, memory_lock, render_index, validate
 
 
 BASE = Path(__file__).resolve().parent.parent
@@ -19,6 +19,7 @@ def normalize_generated_time(text: str) -> str:
 
 
 def main() -> int:
+    configure_utf8_output()
     errors: list[str] = []
     with memory_lock(BASE):
         entries, warnings = discover(BASE)

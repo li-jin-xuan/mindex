@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import os
 import re
+import sys
 import tempfile
 from contextlib import contextmanager
 from dataclasses import dataclass
@@ -58,6 +59,14 @@ class Entry:
     category: str
     metadata: dict[str, str]
     body: str
+
+
+def configure_utf8_output() -> None:
+    """Make CLI messages portable to Windows consoles with legacy encodings."""
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(encoding="utf-8", errors="replace")
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, str], str]:

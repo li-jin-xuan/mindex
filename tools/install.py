@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from mindex_core import atomic_write
+from mindex_core import atomic_write, configure_utf8_output
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -32,6 +32,7 @@ def replace_block(content: str, block: str | None) -> str:
 
 
 def main() -> int:
+    configure_utf8_output()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="只检查是否正确安装")
     parser.add_argument("--uninstall", action="store_true", help="删除 MIndex 管理块")

@@ -3,13 +3,20 @@
 
 from pathlib import Path
 
-from mindex_core import atomic_write, discover, memory_lock, render_index
+from mindex_core import (
+    atomic_write,
+    configure_utf8_output,
+    discover,
+    memory_lock,
+    render_index,
+)
 
 
 BASE = Path(__file__).resolve().parent.parent
 
 
 def main() -> int:
+    configure_utf8_output()
     with memory_lock(BASE):
         entries, warnings = discover(BASE)
         for warning in warnings:

@@ -14,6 +14,7 @@ sys.path.insert(0, str(TOOLS))
 from install import managed_block, replace_block  # noqa: E402
 from mindex_core import (  # noqa: E402
     atomic_write,
+    configure_utf8_output,
     discover,
     memory_lock,
     parse_frontmatter,
@@ -23,6 +24,10 @@ from mindex_core import (  # noqa: E402
 
 
 class MIndexTests(unittest.TestCase):
+    def test_configure_utf8_output(self) -> None:
+        configure_utf8_output()
+        self.assertEqual(sys.stdout.encoding.casefold(), "utf-8")
+
     def test_frontmatter_requires_opening_at_start(self) -> None:
         metadata, body = parse_frontmatter("intro\n---\ntitle: wrong\n---\nbody")
         self.assertEqual(metadata, {})
