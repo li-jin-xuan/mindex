@@ -1,0 +1,17 @@
+*.log
+*.md.tmp
+.memory.lock
+secrets.md
+credentials.md
+tokens.md
+passwords.md
+keys.md
+auth.md
+__pycache__/
+*.pyc
+.DS_Store
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
