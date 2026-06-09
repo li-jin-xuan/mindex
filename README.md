@@ -2,7 +2,7 @@
 
 **纯文本记忆系统 · 标准库零依赖 · 可版本控制 · Claude Code 原生**
 
-[![CI](https://github.com/li-jin-xuan/mindex/actions/workflows/ci.yml/badge.svg)](https://github.com/li-jin-xuan/mindex/actions/workflows/ci.yml)
+[![CI](https://github.com/RawSector/mindex/actions/workflows/ci.yml/badge.svg)](https://github.com/RawSector/mindex/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 MIndex 是一个面向 Claude Code 的长期记忆目录。它把经过筛选的稳定事实、偏好和项目决策保存在 Markdown 中，用脚本维护可召回索引。
@@ -34,7 +34,7 @@ claude --plugin-dir ./plugin
 从公开 marketplace 安装：
 
 ```text
-/plugin marketplace add li-jin-xuan/mindex
+/plugin marketplace add RawSector/mindex
 /plugin install mindex@mindex
 ```
 
@@ -55,7 +55,7 @@ tools/            ← 维护脚本
 ## 快速开始
 
 ```bash
-git clone https://github.com/li-jin-xuan/mindex.git
+git clone https://github.com/RawSector/mindex.git
 cd mindex
 
 # 接入用户级 Claude Code 记忆（对所有项目生效）
