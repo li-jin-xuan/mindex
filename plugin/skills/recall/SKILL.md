@@ -21,4 +21,8 @@ Retrieve memory relevant to `$ARGUMENTS`.
    path in the answer.
 7. If entries conflict, prefer neither silently. State the conflict and compare
    their `updated` dates and provenance.
-8. Do not reveal unrelated private memory.
+8. **Optional: Vector search** — If the MIndex root has `tools/mindex_vector.py`
+   and `turbovec` is installed, run `python3 tools/mindex_vector.py search "..." --index-dir .mindex`
+   for semantic search. This finds conceptually related content even when keywords don't match.
+   Install with `pip install turbovec sentence-transformers` (2 dependencies, ~80MB model download).
+9. Do not reveal unrelated private memory.

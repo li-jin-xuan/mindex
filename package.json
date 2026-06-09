@@ -1,0 +1,28 @@
+{
+  "name": "mindex",
+  "version": "1.0.0",
+  "description": "Auditable, version-controlled, cross-project structured memory for LLM agents",
+  "author": "RawSector",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RawSector/mindex.git"
+  },
+  "keywords": [
+    "memory",
+    "knowledge-management",
+    "long-term-memory",
+    "markdown"
+  ],
+  "files": [
+    "tools/",
+    "plugin/",
+    "README.md",
+    "LICENSE",
+    "tools/mindex_vector.py"
+  ],
+  "optionalDependencies": {
+    "turbovec": ">=0.7.0",
+    "sentence-transformers": ">=3.0.0"
+  }
+}
